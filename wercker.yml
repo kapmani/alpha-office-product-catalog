@@ -37,11 +37,9 @@ inject-secret:
     - kubectl:
         name: delete secret
         server: $KUBERNETES_MASTER
-        #username: $USERNAME
-        #password: $PASSWORD
         token: $TOKEN
         insecure-skip-tls-verify: true
-        command: delete secret wercker; echo delete registry secret
+        command: delete secret ocir --namespace=eshneken; echo delete registry secret
 
 deploy-to-cluster:
     box:
@@ -58,8 +56,6 @@ deploy-to-cluster:
     - kubectl:
         name: deploy to kubernetes
         server: $KUBERNETES_MASTER
-        #username: $USERNAME
-        #password: $PASSWORD
         token: $TOKEN
         insecure-skip-tls-verify: true
-        command: apply -f kubernetes.yml
+        command: apply -f kubernetes.yml --namespace=eshneken
