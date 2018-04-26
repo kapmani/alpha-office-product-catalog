@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: product-catalog-app-container
-        image: ${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+        image: ${DOCKER_REGISTRY/mankap/}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
         imagePullPolicy: Always
         ports:
         - name: pc-app-port
