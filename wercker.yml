@@ -69,7 +69,7 @@ deploy-to-cluster:
         
     - script:
         name: wait to delete namespace
-        code: sleep 30
+        code: sleep 45
         
     - kubectl:
         name: create namespace    
